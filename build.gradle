@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://dl.bintray.com/sargunv/maven' }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+    ext {
+        // Sdk and tools
+        compileSdkVersion = 30
+        minSdkVersion = 21
+        targetSdkVersion = 30
+        buildToolsVersion = "30.0.2"
+        versionCode = 1
+        versionName = "1.0"
+
+        // App dependencies
+        appCompatVersion = '1.2.0'
+        constraintLayoutVersion = '2.0.4'
+        junitVersion = '4.+'
+        materialVersion = '1.3.0'
+        testExtJunit = '1.1.2'
+        espressoVersion = '3.3.0'
+        pokekotlinVersion = '2.4.0'
+        navigationVersion = '2.3.5'
+        lifecycleVersion = '2.2.0'
+        retrofit = '2.9.0'
+        okhttpLogging = '4.9.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://dl.bintray.com/sargunv/maven' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

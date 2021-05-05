@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.roy.pokemonbook"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+         viewBinding = true
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+
+    //https://github.com/PokeAPI/pokekotlin
+//    implementation "me.sargunvohra.lib:pokekotlin:$rootProject.pokekotlinVersion"
+
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:retrofit-mock:$rootProject.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLogging"
+
+    implementation "io.reactivex.rxjava3:rxjava:3.0.0"
+
+    implementation "androidx.navigation:navigation-fragment:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui:$rootProject.navigationVersion"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+
+    implementation 'com.google.dagger:hilt-android:2.28-alpha'
+    kapt 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+
+    implementation"androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation "io.coil-kt:coil:1.1.0"
+
+}

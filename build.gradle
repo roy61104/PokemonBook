@@ -38,6 +38,7 @@ buildscript {
         lifecycleVersion = '2.2.0'
         retrofit = '2.9.0'
         okhttpLogging = '4.9.0'
+
     }
 }
 

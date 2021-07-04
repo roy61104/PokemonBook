@@ -46,7 +46,6 @@ public class ListResponse {
         private String name;
         private String url;
 
-
         public String getName() {
             return name;
         }
@@ -55,7 +54,7 @@ public class ListResponse {
             this.name = name;
         }
 
-        public  String getUrl() {
+        public String getUrl() {
             return url;
         }
 
@@ -68,15 +67,15 @@ public class ListResponse {
         }
 
 
-        public String getImageUrl(){
+        public String getImageUrl() {
             //https://pokeapi.co/api/v2/pokemon/1/
             String index = url.split("/")[6];
             try {
                 int i = Integer.parseInt(index);
-            }catch (Exception e){
+            } catch (Exception e) {
                 index = "1";
             }
-            return  "https://pokeres.bastionbot.org/images/pokemon/"+index+".png";
+            return "https://pokeres.bastionbot.org/images/pokemon/" + index + ".png";
         }
     }
 

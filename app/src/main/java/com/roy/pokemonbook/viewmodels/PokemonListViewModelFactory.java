@@ -28,6 +28,9 @@ public class PokemonListViewModelFactory extends AbstractSavedStateViewModelFact
     @NonNull
     @Override
     protected <T extends ViewModel> T create(@NonNull String key, @NonNull Class<T> modelClass, @NonNull SavedStateHandle handle) {
-        return null;
+       if (modelClass.isAssignableFrom(PokemonListViewModel.class)){
+           return new PokemonListViewModel(modelClass);
+       }
+        return new PokemonListViewModel(modelClass);
     }
 }

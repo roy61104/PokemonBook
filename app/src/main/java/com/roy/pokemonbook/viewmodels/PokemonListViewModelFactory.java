@@ -9,6 +9,8 @@ import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 import androidx.savedstate.SavedStateRegistryOwner;
 
+import org.jetbrains.annotations.NotNull;
+
 public class PokemonListViewModelFactory extends AbstractSavedStateViewModelFactory {
 
     /**
@@ -20,17 +22,14 @@ public class PokemonListViewModelFactory extends AbstractSavedStateViewModelFact
      *                    {@link SavedStateHandle} passed in {@link ViewModel ViewModels}
      *                    if there is no previously saved state
      */
-    public PokemonListViewModelFactory(@NonNull SavedStateRegistryOwner owner, @Nullable Bundle defaultArgs) {
+    public PokemonListViewModelFactory(@NonNull @NotNull SavedStateRegistryOwner owner, @Nullable @org.jetbrains.annotations.Nullable Bundle defaultArgs) {
         super(owner, defaultArgs);
     }
 
-
     @NonNull
+    @NotNull
     @Override
-    protected <T extends ViewModel> T create(@NonNull String key, @NonNull Class<T> modelClass, @NonNull SavedStateHandle handle) {
-       if (modelClass.isAssignableFrom(PokemonListViewModel.class)){
-           return new PokemonListViewModel(modelClass);
-       }
-        return new PokemonListViewModel(modelClass);
+    protected <T extends ViewModel> T create(@NonNull @NotNull String key, @NonNull @NotNull Class<T> modelClass, @NonNull @NotNull SavedStateHandle handle) {
+        return null;
     }
 }
